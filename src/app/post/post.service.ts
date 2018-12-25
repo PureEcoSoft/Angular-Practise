@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
-import {HttpClient,HttpHeaders} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
-export class LoginService {
+export class PostService {
 
   constructor(private http:HttpClient) { }
 
 
-  onLogin(frm:any){
-    console.log(frm);
-   return this.http.post("http://localhost:3000/employeeLogin",frm,{
+  getAllPost(){
+    return this.http.get("https://jsonplaceholder.typicode.com/users",{
       headers:new HttpHeaders({
         'content-type':'application/json'
       })

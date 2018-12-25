@@ -10,11 +10,13 @@ import { LoginModule } from './login/login.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { PostComponent } from './post/post.component';
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
     DashboardComponent,
+    PostComponent,
     
   ],
   imports: [

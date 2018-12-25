@@ -9,8 +9,8 @@ export class RegistrationService {
 
   //Register new Employee
   onRegister(frm:any){
-    console.log(frm);
-   return this.http.post("http://localhost:3001/registration",frm,{
+    console.log();
+   return this.http.post("http://localhost:3000/registration",frm,{
       headers:new HttpHeaders({
         'content-type':'application/json'
       })
@@ -19,7 +19,7 @@ export class RegistrationService {
 
   //display all employee
   getAllemployee(){
-    return this.http.get("http://localhost:3001/employee",{
+    return this.http.get("http://localhost:3000/employee",{
       headers:new HttpHeaders({
         'content-type':'application/json'
       })
@@ -30,7 +30,7 @@ export class RegistrationService {
     let obj={
       "_id":_id
     }
-    return this.http.post("http://localhost:3001/getEmployee",obj,{
+    return this.http.post("http://localhost:3000/getEmployee",obj,{
       headers:new HttpHeaders({
         'content-type':'application/json'
       })
@@ -39,7 +39,7 @@ export class RegistrationService {
 
   updateEmployee(frm:any){
     console.log(frm);
-   return this.http.put("http://localhost:3001/registration",frm,{
+   return this.http.put("http://localhost:3000/registration",frm,{
       headers:new HttpHeaders({
         'content-type':'application/json'
       })
@@ -56,6 +56,6 @@ export class RegistrationService {
       }),
       body: id,
     };
-    return this.http.delete('http://localhost:3001/registration', options);
+    return this.http.delete('http://localhost:3000/registration', options);
   }
 }

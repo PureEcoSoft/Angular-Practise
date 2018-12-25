@@ -1,4 +1,4 @@
-import { Component, OnInit,OnChanges } from '@angular/core';
+import { Component, OnInit,OnChanges, OnDestroy } from '@angular/core';
 import { RegistrationService } from './registration.service';
 import { NgControlStatus } from '@angular/forms';
 
@@ -9,7 +9,7 @@ import { NgControlStatus } from '@angular/forms';
   styleUrls: ['./registration.component.css'],
   providers:[RegistrationService]
 })
-export class RegistrationComponent implements OnInit {
+export class RegistrationComponent implements OnInit,OnDestroy {
 
   id: string;
   empuser: string;
@@ -31,7 +31,12 @@ export class RegistrationComponent implements OnInit {
       this.empDetail=res;
     },err=>{
       console.log(err);
+    },()=>{
+
     })
+
+  }
+  ngOnDestroy(){
 
   }
 
@@ -51,6 +56,7 @@ export class RegistrationComponent implements OnInit {
       //insert
       this.registerService.onRegister(frm).subscribe(res=>{
         console.log(res);
+        alert("saved Sucessfully");
         this.ngOnChanges();
       },err=>{
   
